@@ -63,8 +63,7 @@ class Register extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         if (this.isFormValid()) {
-        // That's a workaround to prevent double click on submit button
-        this.setState({ errors: [], loading: true});;
+        this.setState({ errors: [], loading: true});
         firebase
             .auth()
             .createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -77,6 +76,7 @@ class Register extends React.Component {
                 .then(() => {
                     this.saveUser(createdUser).then(() => {
                         console.log('User saved');
+                        this.setState({ loading: false});
                     })
                 })
                 .catch(err => {
@@ -123,7 +123,7 @@ class Register extends React.Component {
         return (
             <Grid textAlign="center" verticalAlign="middle" className="app">
                 <Grid.Column style={{ maxWidth: 450 }}>
-                    <Header as="h2" icon color ="grey" textAlign="center">
+                    <Header as="h1" icon color ="grey" textAlign="center">
                         <Icon name="address book" color="grey"/>
                         Register for DiscordClone
                     </Header>
@@ -176,7 +176,15 @@ class Register extends React.Component {
                                 type="password" 
                             />
 
-                            <Button disabled={loading} className = {loading ? 'loading' : ''} color ="grey" fluid size="large">Submit</Button>
+                            <Button 
+                                disabled={loading} 
+                                className = {loading ? 'loading' : ''} 
+                                color ="grey" 
+                                fluid 
+                                size="large"
+                                >
+                                    Submit
+                            </Button>
                         </Segment>
                     </Form>
                     {errors.length > 0 && (
