@@ -10,7 +10,7 @@
 /build
 
 # firebase config must be private
-/src/components/firebase.js
+/src/firebase.js
 
 # misc
 .DS_Store
