@@ -60,7 +60,7 @@ class MessageForm extends React.Component {
     }
 
     render() {
-        const { errors, message, loading } = this.state;
+        const { errors, message, loading  } = this.state;
 
         return (
             <Segment className="message__form">
