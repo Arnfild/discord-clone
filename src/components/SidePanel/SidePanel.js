@@ -8,6 +8,7 @@ import DirectMessages from "./DirectMessages";
 class SidePanel extends React.Component {
     render() {
         const { currentUser } = this.props;
+        
         return (
             <Menu
                 size="large"
@@ -18,7 +19,7 @@ class SidePanel extends React.Component {
             >
                 <UserPanel currentUser={currentUser} />
                 <Channels currentUser={currentUser}/>
-                <DirectMessages />
+                <DirectMessages currentUser={currentUser} />
             </Menu>
         )
     }
