@@ -16,7 +16,7 @@ What are the core features of this project?
 
 
 # Firebase Deploy
-The project was deployed with Firebase: https://discord-clone-e79c8.web.app/login
+The project was deployed with Firebase: https://discord-clone-e79c8.web.app
 ## Sample Accounts
 1. E-Mail: Test@gmail.com   
 Password: 123456    
